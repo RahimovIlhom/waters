@@ -47,6 +47,11 @@ class Mahsulot(models.Model):
     nomeng = models.CharField(max_length=60, blank=True, null = True, validators=[MinLengthValidator(3)])
     nomturk = models.CharField(max_length=60, blank=True, null = True, validators=[MinLengthValidator(3)])
 
+    text1 = models.TextField(blank=True, null=True, validators=[MinLengthValidator(3)])
+    text1ru = models.TextField(blank=True, null=True, validators=[MinLengthValidator(3)])
+    text1eng = models.TextField(blank=True, null=True, validators=[MinLengthValidator(3)])
+    text1turk = models.TextField(blank=True, null=True, validators=[MinLengthValidator(3)])
+
     rasm = models.FileField(null=True,blank=True)
     url = models.CharField(max_length=50)
 
