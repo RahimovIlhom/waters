@@ -59,10 +59,20 @@ class Mahsulot(models.Model):
         return self.nom
 
 class HomePage(models.Model):
-    title = models.CharField(max_length=200, null=True, blank=True)
-    titleru = models.CharField(max_length=200, null = True, blank=True)
-    titleeng = models.CharField(max_length=200, null = True, blank=True)
-    titleeturk = models.CharField(max_length=200, null = True, blank=True)
+    title1 = models.CharField(max_length=200, null=True, blank=True)
+    title2 = models.CharField(max_length=200, null=True, blank=True)
+    title3 = models.CharField(max_length=200, null=True, blank=True)
+    titleru1 = models.CharField(max_length=200, null = True, blank=True)
+    titleru2 = models.CharField(max_length=200, null = True, blank=True)
+    titleru3 = models.CharField(max_length=200, null = True, blank=True)
+    titleeng1 = models.CharField(max_length=200, null = True, blank=True)
+    titleeng2 = models.CharField(max_length=200, null = True, blank=True)
+    titleeng3 = models.CharField(max_length=200, null = True, blank=True)
+    titleeturk1 = models.CharField(max_length=200, null = True, blank=True)
+    titleeturk2 = models.CharField(max_length=200, null = True, blank=True)
+    titleeturk3 = models.CharField(max_length=200, null = True, blank=True)
+
+
 
     rasm1=models.FileField()
     rasm2=models.FileField()
@@ -72,4 +82,19 @@ class HomePage(models.Model):
     text1ru = models.TextField(blank=True, null=True, validators=[MinLengthValidator(3)])
     text1eng = models.TextField(blank=True, null=True, validators=[MinLengthValidator(3)])
     text1turk = models.TextField(blank=True, null=True, validators=[MinLengthValidator(3)])
+
+class Ul(models.Model):
+    nom = models.CharField(max_length=60, blank=True, null = True, validators=[MinLengthValidator(3)])
+    nomru = models.CharField(max_length=60, blank=True, null = True, validators=[MinLengthValidator(3)])
+    nomeng = models.CharField(max_length=60, blank=True, null = True, validators=[MinLengthValidator(3)])
+    nomturk = models.CharField(max_length=60, blank=True, null = True, validators=[MinLengthValidator(3)])
+    submenyu=models.ForeignKey(SubMenyu,on_delete=models.CASCADE,null=True,blank=True)
+
+class List(models.Model):
+    text1 = models.TextField(blank=True, null=True, validators=[MinLengthValidator(3)])
+    text1ru = models.TextField(blank=True, null=True, validators=[MinLengthValidator(3)])
+    text1eng = models.TextField(blank=True, null=True, validators=[MinLengthValidator(3)])
+    text1turk = models.TextField(blank=True, null=True, validators=[MinLengthValidator(3)])
+    ul=models.ForeignKey(Ul,on_delete=models.CASCADE)
+
 
