@@ -37,6 +37,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+CSRF_COOKIE_DOMAIN = '.up.railway.app'
+
 ROOT_URLCONF = 'greenBelt.urls'
 
 TEMPLATES = [
