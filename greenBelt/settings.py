@@ -5,7 +5,7 @@ SECRET_KEY = 'django-insecure-7%)!rf%wy14r4mhmpp*^(cm4u(k*jifl(izoyiu+ng_!!(+aoc
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.up.railway.app', '.pythonanywhere.com', 'localhost', '127.0.0.1']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -87,6 +87,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [str(BASE_DIR.joinpath('static'))]
+STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
